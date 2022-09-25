@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Required CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fancybox.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/mediaqueries.css">
+
+    <title>Storrea Simple</title>
+  </head>
+  <!-- <body data-spy="scroll" data-target=".header-bottom" data-offset="50"> -->
+  <body>
+
+    <div id="header" class="header">
+        <div class="header-top">
+            <div class="content-wrapper vt-middle-align">
+                <div class="sidenav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="search-icon vt-middle-align">
+                    <svg height="25px" width="25px" viewBox="0 0 512 512">
+                        <path d="M448.3,424.7L335,311.3c20.8-26,33.3-59.1,33.3-95.1c0-84.1-68.1-152.2-152-152.2c-84,0-152,68.2-152,152.2  s68.1,152.2,152,152.2c36.2,0,69.4-12.7,95.5-33.8L425,448L448.3,424.7z M120.1,312.6c-25.7-25.7-39.8-59.9-39.8-96.3  s14.2-70.6,39.8-96.3S180,80,216.3,80c36.3,0,70.5,14.2,96.2,39.9s39.8,59.9,39.8,96.3s-14.2,70.6-39.8,96.3  c-25.7,25.7-59.9,39.9-96.2,39.9C180,352.5,145.8,338.3,120.1,312.6z"/>
+                    </svg>
+                    &nbsp;<span class="hidden-xs">Search</span>
+                </div>
+                <div class="logo">
+                    <a href="">
+                        <img class="img-responsive" src="images/logo.jpg">
+                    </a>
+                </div>
+                <div class="header-icon vt-middle-align">
+                    <!-- <div class="wishlist-icon">
+                        <a href="">
+                            <svg height="25px" width="25px" viewBox="0 0 25 25">
+                                <path d="M16.4,6c2,0,3.6,1.6,3.6,3.6c0,2-3.9,6.4-8,9.8c-4.1-3.5-8-7.9-8-9.8C4,7.6,5.6,6,7.6,6C10,6,12,9,12,9S13.9,6,16.4,6   M16.4,4C14.6,4,13,4.9,12,6.3C11,4.9,9.4,4,7.6,4C4.5,4,2,6.5,2,9.6C2,14,12,22,12,22s10-8,10-12.4C22,6.5,19.5,4,16.4,4L16.4,4z"/>
+                            </svg>
+                            <span class="wishlist-count">0</span>
+                        </a>
+                    </div> -->
+                    <div class="cart-icon">
+                        <a href="" class="vt-middle-align">
+                            <span class="hidden-xs" style="margin-right: 5px;">Cart</span>&nbsp;
+                            <svg height="22px" viewBox="0 0 512 512" width="22px">
+                                <path d="m504.399 185.065c-6.761-8.482-16.904-13.348-27.83-13.348h-98.604l-53.469-122.433c-3.315-7.591-12.157-11.06-19.749-7.743-7.592 3.315-11.059 12.158-7.743 19.75l48.225 110.427h-178.458l48.225-110.427c3.315-7.592-.151-16.434-7.743-19.75-7.591-3.317-16.434.15-19.749 7.743l-53.469 122.434h-98.604c-10.926 0-21.069 4.865-27.83 13.348-6.637 8.328-9.086 19.034-6.719 29.376l52.657 230c3.677 16.06 17.884 27.276 34.549 27.276h335.824c16.665 0 30.872-11.216 34.549-27.276l52.657-230.001c2.367-10.342-.082-21.048-6.719-29.376zm-80.487 256.652h-335.824c-2.547 0-4.778-1.67-5.305-3.972l-52.657-229.998c-.413-1.805.28-3.163.936-3.984.608-.764 1.985-2.045 4.369-2.045h85.503l-3.929 8.997c-3.315 7.592.151 16.434 7.743 19.75 1.954.854 3.99 1.258 5.995 1.258 5.782 0 11.292-3.363 13.754-9l9.173-21.003h204.662l9.173 21.003c2.462 5.638 7.972 9 13.754 9 2.004 0 4.041-.404 5.995-1.258 7.592-3.315 11.059-12.158 7.743-19.75l-3.929-8.997h85.503c2.384 0 3.761 1.281 4.369 2.045.655.822 1.349 2.18.936 3.983l-52.657 230c-.528 2.301-2.76 3.971-5.307 3.971z"/>
+                                <path d="m166 266.717c-8.284 0-15 6.716-15 15v110c0 8.284 6.716 15 15 15s15-6.716 15-15v-110c0-8.284-6.715-15-15-15z"/>
+                                <path d="m256 266.717c-8.284 0-15 6.716-15 15v110c0 8.284 6.716 15 15 15s15-6.716 15-15v-110c0-8.284-6.716-15-15-15z"/>
+                                <path d="m346 266.717c-8.284 0-15 6.716-15 15v110c0 8.284 6.716 15 15 15s15-6.716 15-15v-110c-.001-8.284-6.716-15-15-15z"/>
+                            </svg>
+                            <span class="cart-count">10</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="searchbox-holder" id="searchbox-holder">
+                <div class="searchbox" id="searchbox">
+                    <div class="content-wrapper">
+                        <div class="row">
+                            <div class="col-sm-3 col-sm-push-9">
+                                <div class="search-close">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="col-sm-9 col-sm-pull-3">
+                                <form>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control search-input" placeholder="Search by product or collection name">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default" type="submit">
+                                                <svg height="25px" width="25px" viewBox="0 0 512 512">
+                                                    <path d="M448.3,424.7L335,311.3c20.8-26,33.3-59.1,33.3-95.1c0-84.1-68.1-152.2-152-152.2c-84,0-152,68.2-152,152.2  s68.1,152.2,152,152.2c36.2,0,69.4-12.7,95.5-33.8L425,448L448.3,424.7z M120.1,312.6c-25.7-25.7-39.8-59.9-39.8-96.3  s14.2-70.6,39.8-96.3S180,80,216.3,80c36.3,0,70.5,14.2,96.2,39.9s39.8,59.9,39.8,96.3s-14.2,70.6-39.8,96.3  c-25.7,25.7-59.9,39.9-96.2,39.9C180,352.5,145.8,338.3,120.1,312.6z"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom hidden-xs">
+        <!-- <div class="header-bottom" data-spy="affix" data-offset-top="0"> -->
+            <div id="menu" class="menu">
+                <ul class="menu-items">
+                    <li><a href="">home</a></li>
+                    <li class="has-dropdown">
+                        <a href="">features <i class="fa fa-angle-down pull-right"></i></a>
+                        <ul class="dropdown-content child-content">
+                            <li class="has-dropdown">
+                                <a href="">child link 1</a>
+                                <ul class="grand-child-content">
+                                    <li><a href="">grand child link 1</a></li>
+                                    <li><a href="">grand child link 2</a></li>
+                                    <li><a href="">grand child link 3</a></li>
+                                    <li><a href="">grand child link 4</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">child link 2</a></li>
+                            <li><a href="">child link 3</a></li>
+                            <li><a href="">child link 4</a></li>
+                            <li><a href="">child link 5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">shop</a></li>
+                    <li><a href="">blog</a></li>
+                    <li><a href="">stores</a></li>
+                    <li><a href="">others</a></li>
+                    <li><a href="">about</a></li>
+                    <li><a href="">contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Cart Page-->
+    <div class="cart-page" id="cart-page">
+        <div class="content-wrapper">
+            <div class="cart-page-header">
+                <h2>shopping cart</h2>
+            </div>
+            <div class="cart-page-content">
+                <div class="cart-item-header hidden-xs">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-5">
+                            <div class="cart-item-header-title">product</div>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <div class="cart-item-header-title">price</div>
+                        </div>
+                        <div class="col-md-2 col-sm-3">
+                            <div class="cart-item-header-title">quantity</div>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <div class="cart-item-header-title">total</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item-content">
+                    <div class="cart-item">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-5">
+                                <div class="item-image-name">
+                                    <div class="item-image">
+                                        <a href="">
+                                            <img class="img-responsive" src="https://placehold.jp/1000x1000.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="item-name">
+                                        <a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <div class="item-price">
+                                    <div class="unit-price hidden-xs">
+                                        <span><span>&#2547;</span> 500</span>
+                                    </div>
+                                    <div class="total-price visible-xs">
+                                        <span><span>&#2547;</span> 1000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-3 xs-flex">
+                                <div class="item-quantity">
+                                    <div class="quantity-box">
+                                        <button type="button" class="minus">
+                                            <svg width="15" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                                <title>Minus</title><line x1="5" y1="12" x2="19" y2="12"></line>
+                                            </svg>
+                                        </button>
+                                        <input type="text" class="form-control cart-quantity-input" value="100">
+                                        <button type="button" class="plus">
+                                            <svg width="15" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                                <title>Plus</title><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="item-remove-button">
+                                    <a>
+                                        <span>remove</span>
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 hidden-xs">
+                                <div class="cart-item-header-title">
+                                    <div class="item-price">
+                                        <div class="total-price">
+                                            <span><span>&#2547;</span> 1000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item-footer">
+                    <div class="subtotal">
+                        <h2>
+                            <span>subtotal:</span>
+                            <span><span>&#2547;</span> 1000</span>
+                        </h2>
+                    </div>
+                    <div class="cart-buttons">
+                        <a href="" class="tbtn btn-solid">checkout</a>
+                        <a href="/">continue shopping</a>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>        
+    </div>
+    <!-- End Cart Page-->
+
+    <!-- Start Footer Section -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+                            optio, eaque rerum! Provident similique accusantium nemo autem.
+                        </p>
+                        <div class="footer-logo">
+                            <a href="">
+                                <img class="img-responsive" src="images/logo.jpg">
+                            </a>
+                        </div>
+                        <div class="social-link">
+                            <a href="">
+                                <svg height="23px" viewBox="0 0 512 512" width="23px">
+                                    <path d="m475.074219 0h-438.148438c-20.394531 0-36.925781 16.53125-36.925781 36.925781v438.148438c0 20.394531 16.53125 36.925781 36.925781 36.925781h236.574219v-198h-66.5v-77.5h66.5v-57.035156c0-66.140625 40.378906-102.140625 99.378906-102.140625 28.257813 0 52.542969 2.105469 59.621094 3.046875v69.128906h-40.683594c-32.101562 0-38.316406 15.253906-38.316406 37.640625v49.359375h76.75l-10 77.5h-66.75v198h121.574219c20.394531 0 36.925781-16.53125 36.925781-36.925781v-438.148438c0-20.394531-16.53125-36.925781-36.925781-36.925781zm0 0"/>
+                                </svg>
+                            </a>
+                            <a href="">
+                                <svg height="23px" viewBox="0 0 512 512" width="23px">
+                                    <path d="m373.40625 0h-234.8125c-76.421875 0-138.59375 62.171875-138.59375 138.59375v234.816406c0 76.417969 62.171875 138.589844 138.59375 138.589844h234.816406c76.417969 0 138.589844-62.171875 138.589844-138.589844v-234.816406c0-76.421875-62.171875-138.59375-138.59375-138.59375zm108.578125 373.410156c0 59.867188-48.707031 108.574219-108.578125 108.574219h-234.8125c-59.871094 0-108.578125-48.707031-108.578125-108.574219v-234.816406c0-59.871094 48.707031-108.578125 108.578125-108.578125h234.816406c59.867188 0 108.574219 48.707031 108.574219 108.578125zm0 0"/>
+                                    <path d="m256 116.003906c-77.195312 0-139.996094 62.800782-139.996094 139.996094s62.800782 139.996094 139.996094 139.996094 139.996094-62.800782 139.996094-139.996094-62.800782-139.996094-139.996094-139.996094zm0 249.976563c-60.640625 0-109.980469-49.335938-109.980469-109.980469 0-60.640625 49.339844-109.980469 109.980469-109.980469 60.644531 0 109.980469 49.339844 109.980469 109.980469 0 60.644531-49.335938 109.980469-109.980469 109.980469zm0 0"/>
+                                    <path d="m399.34375 66.285156c-22.8125 0-41.367188 18.558594-41.367188 41.367188 0 22.8125 18.554688 41.371094 41.367188 41.371094s41.371094-18.558594 41.371094-41.371094-18.558594-41.367188-41.371094-41.367188zm0 52.71875c-6.257812 0-11.351562-5.09375-11.351562-11.351562 0-6.261719 5.09375-11.351563 11.351562-11.351563 6.261719 0 11.355469 5.089844 11.355469 11.351563 0 6.257812-5.09375 11.351562-11.355469 11.351562zm0 0"/>
+                                </svg>
+                            </a>
+                            <a href="">
+                                <svg height="27px" viewBox="0 0 512 512" width="27px" style="margin-top: 6px;">
+                                    <path d="m334.808594 170.992188-113.113282-61.890626c-6.503906-3.558593-14.191406-3.425781-20.566406.351563-6.378906 3.78125-10.183594 10.460937-10.183594 17.875v122.71875c0 7.378906 3.78125 14.046875 10.117188 17.832031 3.308594 1.976563 6.976562 2.96875 10.652344 2.96875 3.367187 0 6.742187-.832031 9.847656-2.503906l113.117188-60.824219c6.714843-3.613281 10.90625-10.59375 10.9375-18.222656.027343-7.628906-4.113282-14.640625-10.808594-18.304687zm-113.859375 63.617187v-91.71875l84.539062 46.257813zm0 0"/>
+                                    <path d="m508.234375 91.527344-.023437-.234375c-.433594-4.121094-4.75-40.777344-22.570313-59.421875-20.597656-21.929688-43.949219-24.59375-55.179687-25.871094-.929688-.105469-1.78125-.203125-2.542969-.304688l-.894531-.09375c-67.6875-4.921874-169.910157-5.5937495-170.933594-5.59765575l-.089844-.00390625-.089844.00390625c-1.023437.00390625-103.246094.67578175-171.542968 5.59765575l-.902344.09375c-.726563.097657-1.527344.1875-2.398438.289063-11.101562 1.28125-34.203125 3.949219-54.859375 26.671875-16.972656 18.445312-21.878906 54.316406-22.382812 58.347656l-.058594.523438c-.152344 1.714844-3.765625 42.539062-3.765625 83.523437v38.3125c0 40.984375 3.613281 81.808594 3.765625 83.527344l.027344.257813c.433593 4.054687 4.746093 40.039062 22.484375 58.691406 19.367187 21.195312 43.855468 24 57.027344 25.507812 2.082031.238282 3.875.441406 5.097656.65625l1.183594.164063c39.082031 3.71875 161.617187 5.550781 166.8125 5.625l.15625.003906.15625-.003906c1.023437-.003907 103.242187-.675781 170.929687-5.597657l.894531-.09375c.855469-.113281 1.816406-.214843 2.871094-.324218 11.039062-1.171875 34.015625-3.605469 54.386719-26.019532 16.972656-18.449218 21.882812-54.320312 22.382812-58.347656l.058594-.523437c.152344-1.71875 3.769531-42.539063 3.769531-83.523438v-38.3125c-.003906-40.984375-3.617187-81.804687-3.769531-83.523437zm-26.238281 121.835937c0 37.933594-3.3125 77-3.625 80.585938-1.273438 9.878906-6.449219 32.574219-14.71875 41.5625-12.75 14.027343-25.847656 15.417969-35.410156 16.429687-1.15625.121094-2.226563.238282-3.195313.359375-65.46875 4.734375-163.832031 5.460938-168.363281 5.488281-5.082032-.074218-125.824219-1.921874-163.714844-5.441406-1.941406-.316406-4.039062-.558594-6.25-.808594-11.214844-1.285156-26.566406-3.042968-38.371094-16.027343l-.277344-.296875c-8.125-8.464844-13.152343-29.6875-14.429687-41.148438-.238281-2.710937-3.636719-42.238281-3.636719-80.703125v-38.3125c0-37.890625 3.304688-76.914062 3.625-80.574219 1.519532-11.636718 6.792969-32.957031 14.71875-41.574218 13.140625-14.453125 26.996094-16.054688 36.160156-17.113282.875-.101562 1.691407-.195312 2.445313-.292968 66.421875-4.757813 165.492187-5.464844 169.046875-5.492188 3.554688.023438 102.589844.734375 168.421875 5.492188.808594.101562 1.691406.203125 2.640625.3125 9.425781 1.074218 23.671875 2.699218 36.746094 16.644531l.121094.128906c8.125 8.464844 13.152343 30.058594 14.429687 41.75.226563 2.558594 3.636719 42.171875 3.636719 80.71875zm0 0"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                        <h4 class="footer-header">company</h4>
+                        <ul class="footer-link">
+                            <li>
+                                <a href="">home</a>
+                            </li>
+                            <li>
+                                <a href="">about us</a>
+                            </li>
+                            <li>
+                                <a href="">contact us</a>
+                            </li>
+                            <li>
+                                <a href="">terms & conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix visible-sm"></div>
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                        <h4 class="footer-header">quick link</h4>
+                        <ul class="footer-link">
+                            <li>
+                                <a href="">login</a>
+                            </li>
+                            <li>
+                                <a href="">sign up</a>
+                            </li>
+                            <li>
+                                <a href="">My Cart</a>
+                            </li>
+                            <li>
+                                <a href="">Checkout</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <h4 class="footer-header">newsletter</h4>
+                        <p>Sign up for new product alerts, blogs, DIYs and free printables and downloads!</p>
+                        <div class="newsletter-form">
+                            <input type="email" class="form-control" id="email" placeholder="enter email">
+                            <button type="button" class="tbtn btn-solid">sign up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-sm-6 col-sm-push-6 col-xs-12">
+                    <div class="payment-sslcom">
+                        <img class="img-responsive" src="images/ssl-long.png" alt="Payment Gateway">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-sm-pull-6 col-xs-12">
+                    <p>&copy; 2021 Store name.Powered by <a href="">Storrea</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer Section -->
+
+    <!-- Required JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/fancybox.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

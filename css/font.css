@@ -1,0 +1,21 @@
+.fa-info-circle:before {
+  content: "\f05a";
+}
+.fa-map-marker:before {
+  content: "\f041";
+}
+.fa-truck:before {
+  content: "\f0d1";
+}
+.fa-money:before {
+  content: "\f0d6";
+}
+.fa-credit-card:before {
+  content: "\f09d";
+}
+.fa-star:before {
+  content: "\f005";
+}
+.fa-star-o:before {
+  content: "\f006";
+}
