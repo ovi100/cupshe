@@ -83,18 +83,6 @@ $(document).ready(function () {
     $("body").removeClass('scroll-off');
   });
 
-  // Mobile Sort Options
-
-  $(".mSort-open").click(function () {
-    $(".sort").addClass("mSort-show");
-    $("body").addClass('scroll-off');
-  });
-
-  $(".mSort-close,.sort-overlay").click(function () {
-    $(".sort").removeClass("mSort-show");
-    $("body").removeClass('scroll-off');
-  });
-
   $('#home-slider').slick({
     dots: true,
     arrows: false,
@@ -131,6 +119,27 @@ $(document).ready(function () {
         }
       }
     ]
+  });
+
+  $('.pd-slider').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    arrows: false,
+    //fade: true,
+    asNavFor: '.thumb-slider'
+  });
+
+  $('.thumb-slider').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+    vertical: true,
+    asNavFor: '.pd-slider',
+    focusOnSelect: true
+  });
+
+  $(".rating-status").click(function () {
+    $(document).scrollTop(500);
   });
 
   // Related Products slider

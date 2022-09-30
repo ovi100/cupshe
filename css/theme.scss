@@ -2,6 +2,11 @@
 @import "mixins";
 @import "variables";
 @import "common";
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $theme-font;
   overflow-x: hidden;
@@ -419,7 +424,6 @@ body {
   }
 }
 
-
 // Custom CSS scrollbar For Search Suggestion
 
 /* width */
@@ -770,84 +774,81 @@ body {
   }
 }
 
-// CSS For Wishlist
-#wishlist-content {
-  .collection-info-col {
-    padding-left: 15px;
-  }
-}
-
 // CSS For Product Details Page
 .product-details-page {
   padding: 15px 0;
-  .product-image {
-    background: $wcolor;
-    padding: 15px;
-    .thumb-control {
-      img {
-        height: 80px;
-        margin-top: 10px;
-        margin-right: 10px;
-      }
-    }
-  }
+
   .product-details {
-    .col-md-6 {
-      padding-left: 0;
+    .thumb-control {
       padding-right: 0;
+    }
+    .product-image-slider {
+      padding-left: 0;
+    }
+    .pd-description {
+      position: sticky;
+      top: 120px;
     }
     .product-description {
       background: $wcolor;
       padding: 15px;
       .name {
         @include justify-content(space-between);
+        margin-bottom: 10px;
         h4 {
           color: $gcolor;
           font-weight: 400;
           margin-top: 0;
           text-transform: capitalize;
         }
+        a {
+          @include flexbox;
+          @include align-items(center);
+          @include justify-content(center);
+          height: 35px;
+          width: 35px;
+          background: $wcolor;
+          border-radius: 50%;
+          @include box-shadow(0px 0px 3px 1px #ddd);
+          margin-right: 10px;
+        }
       }
-      .rating-status {
-        border-bottom: 1px dashed #ccc;
+      .price-rating {
+        @include justify-content(space-between);
         margin-bottom: 10px;
-        padding-bottom: 10px;
-        i {
-          color: $glcolor;
-          margin-right: 2px;
+        .price {
+          .old-price {
+            color: $gcolor;
+            font-size: 15px;
+            font-weight: 400;
+            margin-bottom: 5px;
+          }
+          .current-price {
+            color: $bcolor;
+            font-size: 18px;
+            font-weight: 500;
+            @include opacity(0.7);
+          }
+          p {
+            margin-top: 10px;
+          }
         }
-        .rating-count {
-          color: $gcolor;
-          font-size: 10px;
-          letter-spacing: 2px;
-          margin-left: 5px;
+        .rating-status {
+          cursor: pointer;
+          i {
+            color: $glcolor;
+            margin-right: 2px;
+          }
+          .rating-count {
+            color: $gcolor;
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-left: 5px;
+          }
         }
       }
-      .price {
-        border-bottom: 1px dashed #ccc;
-        margin-bottom: 10px;
-        .old-price {
-          color: $gcolor;
-          font-size: 15px;
-          font-weight: 400;
-          margin-bottom: 5px;
-        }
-        .current-price {
-          color: $bcolor;
-          font-size: 18px;
-          font-weight: 500;
-          @include opacity(0.7);
-        }
-        p {
-          margin-top: 10px;
-        }
-      }
-      .stock-status {
-        border-bottom: 1px dashed #ccc;
-        padding-bottom: 10px;
-      }
+
       .quantity-row {
-        border-bottom: 1px dashed #ccc;
         padding-bottom: 10px;
         margin: 10px 0;
         label {
@@ -893,71 +894,6 @@ body {
             margin-right: 10px;
             padding: 10px 15px;
             text-transform: uppercase;
-          }
-        }
-        .icons {
-          a {
-            @include flexbox;
-            @include align-items(center);
-            @include justify-content(center);
-            height: 35px;
-            width: 35px;
-            background: $wcolor;
-            border: 1px solid $theme-color;
-            border-radius: 50%;
-            margin-right: 10px;
-            @include transition(all, 0.4s, linear);
-
-            svg {
-              path {
-                fill: $theme-color;
-                @include transition(all, 0.4s, linear);
-              }
-            }
-
-            &:hover {
-              background: $theme-color;
-              @include transition(all, 0.4s, linear);
-
-              svg {
-                path {
-                  fill: $wcolor;
-                  @include transition(all, 0.4s, linear);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    .delivery-text {
-      background: $wcolor;
-      padding: 15px;
-      .delivery-option {
-        margin-bottom: 15px;
-        .del-header {
-          @include justify-content(space-between);
-          border-bottom: 1px solid #ddd;
-          padding-bottom: 10px;
-          text-transform: capitalize;
-        }
-        .del-content {
-          padding-top: 10px;
-
-          p {
-            text-transform: capitalize;
-
-            i,
-            svg {
-              font-size: 18px;
-              margin-right: 10px;
-            }
-          }
-
-          .text-icon {
-            @include flexbox;
-            @include align-items(center);
-            @include justify-content(space-between);
           }
         }
       }
