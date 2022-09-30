@@ -84,14 +84,6 @@ $desktop: "(min-width: 1201px) and (max-width: 1900px)";
   }
 
   // Index Page
-  .home-slider {
-    .slick-slide {
-      margin: 0 5px;
-      .item {
-        width: 300px !important;
-      }
-    }
-  }
   .home-categories {
     .home-categories-content {
       @include flex-wrap(wrap);
@@ -174,23 +166,20 @@ $desktop: "(min-width: 1201px) and (max-width: 1900px)";
       }
       .collection-info-col {
         position: unset;
-        padding-left: 15px;
       }
       .collection-info {
-        .fixed-sort {
-          position: fixed;
-          right: 0;
-          left: 0;
-          bottom: 0;
-          background: $wcolor;
-          z-index: 10;
-        }
         .sort-mFilter {
-          border-top: 1px solid #ddd;
-          border-bottom: 1px solid #ddd;
+          position: sticky;
+          top: 60px;
+          background: $wcolor;
+          border-top: 1px solid #f5f5f5;
+          border-bottom: 1px solid #f5f5f5;
           @include flexbox;
           @include align-items(center);
           @include justify-content(space-between);
+          margin: 0 -15px;
+          padding: 0 10px;
+          z-index: 10;
 
           .sort {
             border-top: 0;
@@ -198,7 +187,7 @@ $desktop: "(min-width: 1201px) and (max-width: 1900px)";
             border-bottom: 0;
             display: block;
             flex: 0 0 50%;
-            padding: 10px;
+            padding: 0 10px;
 
             .sort-label {
               @include flexbox;

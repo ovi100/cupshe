@@ -6,7 +6,6 @@ $(document).ready(function () {
         $(".header .searchbox-holder").fadeIn(0);
         $(".header .offer-text").fadeOut(0);
       }
-      $(".footer-fixed-nav").removeClass("slide");
 
     } else {
       $('.scrollup').fadeOut();
@@ -14,7 +13,6 @@ $(document).ready(function () {
         $(".header .offer-text").fadeIn(0);
         $(".header .searchbox-holder").fadeOut(0);
       }
-      $(".footer-fixed-nav").addClass("slide");
     }
   });
 
@@ -29,16 +27,6 @@ $(document).ready(function () {
       e.preventDefault();
       $("body").removeClass('scroll-off');
       $(".sidenav").removeClass("show-sidenav");
-    });
-  }
-
-  if ($(window).width() < 993) {
-    $(window).scroll(function () {
-      if ($(this).scrollTop() > 100) {
-        $(".sort-mFilter").addClass('fixed-sort');
-      } else {
-        $(".sort-mFilter").removeClass('fixed-sort');
-      }
     });
   }
 

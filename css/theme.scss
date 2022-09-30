@@ -137,51 +137,69 @@ body {
   @include box-shadow(0 0 2px #666);
   padding: 10px 0;
   z-index: 50;
-  .content-wrapper {
+  .top-content {
     @include justify-content(space-between);
-  }
-  .sidenav-toggle {
-    display: none;
-    span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: $bcolor;
-      margin-bottom: 5px;
-    }
-  }
-  .logo {
-    img {
-      margin: 0 auto;
-    }
-  }
-  .header-icon {
-    position: relative;
-    @include justify-content(flex-end);
-    @include transition(all, 0.3s, ease);
-    div {
-      position: relative;
-      width: 55px;
-      cursor: pointer;
-      padding: 5px 0;
-      text-align: center;
 
-      .wishlist-count {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        width: 16px;
-        height: 16px;
+    .sidenav-toggle {
+      display: none;
+      span {
+        display: block;
+        width: 24px;
+        height: 2px;
         background: $bcolor;
-        border-radius: 50%;
-        color: $wcolor;
-        @include flexbox;
-        @include align-items(center);
-        @include justify-content(center);
-        font-size: 12px;
+        margin-bottom: 5px;
       }
-      .cart-count{
-        @extend .wishlist-count;
+    }
+    .logo {
+      img {
+        margin: 0 auto;
+      }
+    }
+    .header-icon {
+      position: relative;
+      @include justify-content(flex-end);
+      @include transition(all, 0.3s, ease);
+      div {
+        position: relative;
+        width: 55px;
+        cursor: pointer;
+        padding: 5px 0;
+        text-align: center;
+
+        .wishlist-count {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          width: 16px;
+          height: 16px;
+          background: $bcolor;
+          border-radius: 50%;
+          color: $wcolor;
+          @include flexbox;
+          @include align-items(center);
+          @include justify-content(center);
+          font-size: 12px;
+        }
+        .cart-count {
+          @extend .wishlist-count;
+        }
+      }
+    }
+  }
+  .bottom-content {
+    padding-top: 15px;
+    .menu {
+      .menu-items {
+        @include justify-content(center);
+        margin-bottom: 0;
+        li {
+          margin: 0 15px;
+          a {
+            font-size: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+          }
+        }
       }
     }
   }
@@ -273,33 +291,6 @@ body {
   }
 }
 
-.scrollup {
-  position: fixed;
-  right: 12px;
-  bottom: 135px;
-  height: 40px;
-  width: 40px;
-  background: $theme-color;
-  border: 0;
-  border-radius: 100%;
-  box-shadow: none;
-  text-align: center;
-  font-size: 25px;
-  color: $wcolor;
-  cursor: pointer;
-  display: none;
-  line-height: 52px;
-  z-index: 9;
-  svg {
-    fill: $wcolor;
-  }
-  &:hover,
-  &:focus {
-    background: $theme-color;
-    @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
-  }
-}
-
 .sidebar-cart-holder {
   .sidebar-cart {
     position: fixed;
@@ -337,36 +328,45 @@ body {
       }
     }
     .cart-content {
+      max-height: calc(100vh - 200px);
       overflow-y: auto;
       .cart-item {
         @include flexbox;
         @include align-items(center);
         @include justify-content(space-between);
-        border-bottom: 1px solid #ddd;
         margin-bottom: 10px;
         padding: 10px;
 
-        .quantity {
-          text-align: center;
-
-          div:not(.input-number) {
-            cursor: pointer;
+        .content {
+          margin-left: 10px;
+          a {
+            color: #454545;
           }
-        }
-        .photo {
-          flex: 0.2;
-        }
-        .info {
-          flex: 0.6;
           p {
-            color: $gcolor;
+            color: $bcolor;
             font-size: 13px;
-            margin-bottom: 0;
           }
-        }
-        .price {
-          color: red;
-          font-size: 13px;
+          .price {
+            font-weight: 500;
+          }
+          .action {
+            @include flexbox;
+            @include align-items(center);
+            @include justify-content(space-between);
+          }
+          .quantity {
+            border: 1px solid #ddd;
+            @include flexbox;
+            @include align-items(center);
+            @include justify-content(space-between);
+            flex: 0.5;
+            padding: 8px 12px;
+            text-align: center;
+
+            div:not(.input-number) {
+              cursor: pointer;
+            }
+          }
         }
         .remove {
           cursor: pointer;
@@ -377,21 +377,18 @@ body {
       position: absolute;
       bottom: 0;
       width: 100%;
+      background: $wcolor;
       border-top: 1px solid #ddd;
       padding: 15px 10px;
       text-align: center;
       text-transform: capitalize;
 
-      a {
-        color: $wcolor;
-        display: inline-block;
-        padding: 13px 26px;
-      }
-      a:first-child {
-        background: lighten($theme-color, 5%);
-      }
-      a:last-child {
-        background: darken($theme-color, 10%);
+      .subtotal {
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(space-between);
+        font-weight: 600;
+        margin-bottom: 15px;
       }
     }
   }
@@ -422,40 +419,6 @@ body {
   }
 }
 
-.footer-fixed-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: $wcolor;
-  display: none;
-  @include align-items(center);
-  @include justify-content(space-between);
-  padding: 15px;
-  transform: translateY(100%);
-  @include transition(transform, 0.4s, linear);
-  z-index: 100;
-
-  div {
-    cursor: pointer;
-  }
-  .fixed-nav-cart-icon {
-    position: relative;
-    .cart-count {
-      position: absolute;
-      top: -5px;
-      right: 0;
-      width: 20px;
-      height: 20px;
-      background: $theme-color;
-      border-radius: 50%;
-      color: $wcolor;
-      @include flexbox;
-      @include align-items(center);
-      @include justify-content(center);
-      font-size: 12px;
-    }
-  }
-}
 
 // Custom CSS scrollbar For Search Suggestion
 
@@ -591,7 +554,13 @@ body {
     }
   }
 }
-
+.home-slider {
+  .slick-dots {
+    width: auto;
+    bottom: 30px;
+    right: 20px;
+  }
+}
 .home-categories {
   .home-categories-header {
     h2 {
@@ -720,7 +689,7 @@ body {
   .collection-content {
     .filter-col {
       position: sticky;
-      top: 75px;
+      top: 125px;
       padding-right: 5px;
       margin-bottom: 10px;
     }
@@ -728,10 +697,9 @@ body {
       background: $wcolor;
       .filters {
         .filters-header {
-          padding: 15px;
+          padding: 10px 15px;
           .filter-text {
-            font-size: 18px;
-            text-transform: capitalize;
+            font-size: 24px;
           }
         }
         .filters-content {
@@ -756,44 +724,35 @@ body {
     }
     .collection-info-col {
       padding-left: 5px;
+      padding-right: 5px;
     }
     .collection-banner {
       margin-bottom: 10px;
     }
     .collection-info {
       background: $wcolor;
-      .collection-name {
-        padding: 15px;
-        text-align: center;
-        h3 {
-          font-size: 22px;
-          font-weight: 400;
-          margin: 0;
-          text-transform: capitalize;
-          .collection-count {
-            color: $gcolor;
-          }
-        }
-      }
       .sort-mFilter {
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(space-between);
+        padding: 6px 10px;
+
         .sort {
-          border-top: 1px solid #ddd;
-          border-bottom: 1px solid #ddd;
-          padding: 10px 15px;
           .sort-label {
             @include flexbox;
             @include align-items(center);
-            color: $gcolor;
-            margin-right: 15px;
             text-transform: capitalize;
 
             .text {
-              margin-right: 5px;
+              margin-right: 10px;
             }
             select {
               width: auto;
+              border: 0;
+              border-bottom: 1px solid $bcolor;
               border-radius: 0;
               box-shadow: none;
+              text-transform: capitalize;
             }
           }
         }
@@ -802,7 +761,7 @@ body {
         }
       }
       .collection-products {
-        padding: 10px 20px 0 20px;
+        padding: 10px;
         .product-box {
           margin-bottom: 10px;
         }

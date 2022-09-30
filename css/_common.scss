@@ -38,7 +38,6 @@ a {
 .truncate {
   max-width: 200px;
   display: inline-block;
-  font-size: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -49,6 +48,15 @@ a {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.px-1 {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.bold {
+  font-weight: 600;
 }
 
 .zoom-in {
@@ -263,6 +271,33 @@ button[disabled] {
 
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+.scrollup {
+  position: fixed;
+  right: 12px;
+  bottom: 135px;
+  height: 40px;
+  width: 40px;
+  background: $theme-color;
+  border: 0;
+  border-radius: 100%;
+  box-shadow: none;
+  text-align: center;
+  font-size: 25px;
+  color: $wcolor;
+  cursor: pointer;
+  display: none;
+  line-height: 45px;
+  z-index: 9;
+  svg {
+    fill: $wcolor;
+  }
+  &:hover,
+  &:focus {
+    background: $theme-color;
+    @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+  }
 }
 
 // CSS For Loading Animation
@@ -489,6 +524,10 @@ input[type="number"] {
 
     div:not(.add-to-cart) {
       margin-bottom: 10px;
+    }
+    .name {
+      text-align: justify;
+      word-break: break-all;
     }
     .price {
       .regular-price {
