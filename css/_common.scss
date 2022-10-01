@@ -107,6 +107,40 @@ a {
   }
 }
 
+.btn-theme {
+  position: relative;
+  background-color: $wcolor;
+  border: 1px solid $bcolor;
+  color: $wcolor;
+  transition-duration: 0.45s;
+  transition-property: color, border;
+  transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  z-index: 1;
+  &:before {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    z-index: -1;
+    background: #000;
+    transform-origin: left center;
+    transform: scale(1, 1);
+    transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+  &:hover {
+    color: $bcolor;
+    &:before {
+      transform-origin: right center;
+      transform: scale(0, 1);
+    }
+  }
+}
+
 .block-btn {
   width: 100%;
 }
@@ -528,6 +562,12 @@ input[type="number"] {
     .name {
       text-align: justify;
       word-break: break-all;
+
+      a {
+        &:hover {
+          color: $bcolor;
+        }
+      }
     }
     .price {
       .regular-price {
